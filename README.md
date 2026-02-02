@@ -1,1 +1,34 @@
-🎮 Triversi Game (Advanced Reversi Variant)Bu proje, klasik Reversi (Othello) oyununun 3 oyunculu ve dinamik tahta boyutuna sahip gelişmiş bir varyasyonudur. C programlama dili ile geliştirilen oyun, matris manipülasyonu ve karmaşık yol bulma algoritmaları üzerine kuruludur.🚀 Proje ÖzellikleriStandart oyunlardan farklı olarak bu projede aşağıdaki teknik zorluklar çözülmüştür:3 Oyunculu Mekanik: Oyun; Kırmızı (K), Sarı (S) ve Mavi (M) olmak üzere 3 farklı oyuncu/renk ile oynanacak şekilde tasarlanmıştır.8 Yönlü Tarama Algoritması: Bir taş konulduğunda; yatay, dikey ve her iki çapraz yöndeki (toplam 8 yön) rakip taşları tarar ve kurala uygun olanları oyuncunun rengine çevirir.Dinamik Matris Yönetimi: Kullanıcıdan alınan $N \times N$ boyutuna göre oyun tahtası dinamik olarak oluşturulur ve yönetilir.Merkezi Başlangıç Kontrolü: İlk hamlenin oyun tahtasının merkezine veya merkeze en yakın noktalara yapılması zorunluluğunu denetleyen koordinat doğrulama sistemi vardır.🧠 Algoritma MantığıOyunun kalbi, her hamlede çalışan **"Renk Dönüştürme Motoru"**dur. Bu motor şu adımları izler:Girdi Kontrolü: Girilen koordinatın boş olup olmadığını ve diğer taşlarla temasını kontrol eder.+1Yön Tarama: Seçilen noktadan dışarıya doğru 8 farklı yöne (Kuzey, Güney, Doğu, Batı ve Çaprazlar) "Ray Casting" mantığıyla tarama yapar.Kapsama Analizi: Eğer bir yönde rakip taşlar varsa ve o serinin sonunda tekrar oyuncunun kendi taşı bulunuyorsa, aradaki tüm taşlar dönüştürülür.
+# 🎮 Triversi Game (Advanced Reversi Variant)
+
+![Language](https://img.shields.io/badge/Language-C-blue)
+![Game Logic](https://img.shields.io/badge/Logic-Matrix%20Algorithms-orange)
+![Players](https://img.shields.io/badge/Players-3%20(Red%2C%20Yellow%2C%20Blue)-green)
+
+Bu proje, klasik Reversi (Othello) oyununun **3 oyunculu** ve dinamik tahta boyutuna sahip gelişmiş bir varyasyonudur. **C programlama dili** ile geliştirilen oyun, matris manipülasyonu ve karmaşık yol bulma algoritmaları üzerine kuruludur.
+
+## 🚀 Proje Özellikleri
+
+Standart oyunlardan farklı olarak bu projede aşağıdaki teknik zorluklar çözülmüştür:
+
+* **3 Oyunculu Mekanik:** Oyun; Kırmızı (K), Sarı (S) ve Mavi (M) olmak üzere 3 farklı oyuncu/renk ile oynanacak şekilde tasarlanmıştır.
+* **8 Yönlü Tarama Algoritması:** Bir taş konulduğunda; yatay, dikey ve her iki çapraz yöndeki (toplam 8 yön) rakip taşları tarar ve kurala uygun olanları oyuncunun rengine çevirir.
+* **Dinamik Matris Yönetimi:** Kullanıcıdan alınan $N \times N$ boyutuna göre oyun tahtası dinamik olarak oluşturulur ve yönetilir.
+* **Merkezi Başlangıç Kontrolü:** İlk hamlenin oyun tahtasının merkezine veya merkeze en yakın noktalara yapılması zorunluluğunu denetleyen koordinat doğrulama sistemi vardır.
+
+## 🧠 Algoritma Mantığı
+
+Oyunun kalbi, her hamlede çalışan **"Renk Dönüştürme Motoru"**dur. Bu motor şu adımları izler:
+
+1.  **Girdi Kontrolü:** Girilen koordinatın boş olup olmadığını ve diğer taşlarla temasını kontrol eder.
+2.  **Yön Tarama:** Seçilen noktadan dışarıya doğru 8 farklı yöne (Kuzey, Güney, Doğu, Batı ve Çaprazlar) "Ray Casting" mantığıyla tarama yapar.
+3.  **Kapsama Analizi:** Eğer bir yönde rakip taşlar varsa ve o serinin sonunda tekrar oyuncunun kendi taşı bulunuyorsa, aradaki tüm taşlar dönüştürülür.
+
+## 📂 Proje Yapısı
+
+```bash
+Triversi-Game-C/
+├── src/
+│   └── main.c          # Oyun motoru, matris işlemleri ve UI
+├── docs/
+│   └── Proje_Raporu.pdf # Algoritma akış diyagramları ve detaylı rapor
+└── README.md
